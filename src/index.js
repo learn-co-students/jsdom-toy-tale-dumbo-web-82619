@@ -28,7 +28,6 @@ function addToyToDOM(Obj){
   img.src = Obj.image
   img.className = 'toy-avatar'
 
-  let span = document.c
   p.innerText = `${Obj.likes} Likes`
   p.dataset.id = `${Obj.id}`
   p.className = `display-likes-${Obj.id}`
