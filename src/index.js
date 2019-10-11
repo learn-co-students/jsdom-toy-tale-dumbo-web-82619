@@ -27,12 +27,12 @@ function appendToyJson(json) {
 
 
 /* Add a New Toy */
-createNewToyForm.addEventListener('submit', (event) => {
-  event.preventDefault()
-  console.log(event)
+createNewToyForm.addEventListener('submit', (evt) => {
+  evt.preventDefault()
+  console.log(evt)
   
-  let newToyName = event.target.name.value
-  let newToyImg = event.target.image.value
+  let newToyName = evt.target.name.value
+  let newToyImg = evt.target.image.value
   
   fetch('http://localhost:3000/toys', {
     method: 'POST',
@@ -54,14 +54,12 @@ createNewToyForm.addEventListener('submit', (event) => {
 
 
 /* Increase Toy's Likes */
-
     // <div class="card" data-id="${json.id}" >
     //   <h2>${json.name}</h2>
     //   <img class="toy-avatar" src="${json.image}">
     //   <p><span class="like-span" data-id="${json.id}">${json.likes}</span> Likes</p>
     //   <button class="like-btn" data-id="${json.id}" >Like <3</button>
     // </div>
-
 // const toyCollectionDiv = document.querySelector('#toy-collection')
 
 toyCollectionDiv.addEventListener("click", (evt) => {
@@ -72,6 +70,7 @@ toyCollectionDiv.addEventListener("click", (evt) => {
     let id = evt.target.dataset.id
     // console.log(likeCount)
 
+    likeCount = likeCount + 1
     fetch(`http://localhost:3000/toys/${id}`, {
       method: "PATCH",
       headers: {
@@ -79,7 +78,7 @@ toyCollectionDiv.addEventListener("click", (evt) => {
         'Accept': 'application/json'
       },
       body: JSON.stringify({ 
-        likes: likeCount + 1
+        likes: likeCount
       })
     })
     .then(res => res.json)
@@ -88,12 +87,6 @@ toyCollectionDiv.addEventListener("click", (evt) => {
     })
   }
 })
-
-
-
-
-
-
 
 
 addBtn.addEventListener('click', () => {
@@ -107,9 +100,33 @@ addBtn.addEventListener('click', () => {
 })
 
 
-// OR HERE! 
+// OR HERE! Another way of creating
+// 
+// let toysArray = []
+// 
+// function createElement(toy) {
+//   const div = document.createElement('div')
+//     div.className = "card"
+//   const h2 = document.createElement('h2')
+//     h2.innerText = toy.name
+//   const img = document.createElement('img')
+//     img.src = toy.image
+//     img.className = "toy-avatar"
+//   const p = document.createElement('p')
+//     p.innerText = toy.likes
+//   const likeButton = document.createElement('button')
+//     likeButton.className = "like-btn"
+// 
+//   likeButton.addEventListener("click", function(evt) {
+//     increaseLikes(toy, p)
+//   })
+//   div.append(h2, img, p, likeButton)
+//   toyCollectionDiv.append(div)
+//   }
 
-// const likeButton = document.createElement('button')
-// likeButton.className = "like-btn"
-// likeButton.classList.add = "btnId"
-// likeButton.innerHTML += "Like <3"
+// function increaseLikes(toy, element) {
+//   toy.likes = toy.likes + 1
+//   fetch(`http://localhost:3000/toys/${toy.id}`, {})
+//   .then()
+//   .then()
+// }
