@@ -1,6 +1,6 @@
 const addBtn = document.querySelector('#new-toy-btn')
 const toyForm = document.querySelector('.container')
-const form = toyForm.querySelector("form")
+const form = toyForm.querySelector(".add-toy-form")
 let addToy = false
 
 const toyContainer = document.querySelector('#toy-collection')
