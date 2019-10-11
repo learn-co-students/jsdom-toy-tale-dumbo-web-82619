@@ -11,15 +11,37 @@ const createNewToyForm = document.querySelector('.add-toy-form')
 // helper functions \\
 
 function appendToyJsonToToysDiv(json) {
-  toysDiv.innerHTML +=
-  `<div class="card">
-    <h2>${json.name}</h2>
-    <img class="toy-avatar" src="${json.image}">
-    <p><span class="likesCountSpan">${json.likes}</span> Likes</p>
-    <button class="like-btn" data-id="${json.id}" >Likes <3</button>
-  </div>`
+  let divCard = document.createElement('div')
+    divCard.className = 'card'
+    let h2 = document.createElement('h2')
+      h2.innerText = json.name
+    let img = document.createElement('img')
+      img.className = 'toy-avatar'
+      img.src = json.image
+    let p = document.createElement('p')
+      let span = document.createElement('span')
+      span.className = 'likesCountSpan'
+      span.innerText = `${json.likes} Likes`
+      p.append(span)
+    let button = document.createElement('button')
+      button.className = 'like-btn'
+      button.setAttribute('data-id', json.id)
+      button.innerText = 'Like ❤'
+  divCard.append(h2, img, p, button)
+  toysDiv.append(divCard)
 }
 
+// innerHTML version of appendToyJsonToToysDiv \\
+
+// function appendToyJsonToToysDiv(json) {
+//   toysDiv.innerHTML +=
+//   `<div class="card">
+//     <h2>${json.name}</h2>
+//     <img class="toy-avatar" src="${json.image}">
+//     <p><span class="likesCountSpan">${json.likes}</span> Likes</p>
+//     <button class="like-btn" data-id="${json.id}" >Like <3</button>
+//   </div>`
+// }
 
 
 // on-load fetches \\
@@ -60,6 +82,7 @@ createNewToyForm.addEventListener('submit', (event) => {
 
 
 toysDiv.addEventListener('click', (event) => {
+  console.log(event.target.dataset)
   if (event.target.className === 'like-btn') {
     let targetToyCard = event.target.parentElement
     let toyCardLikesSpan = targetToyCard.querySelector('.likesCountSpan')
@@ -78,7 +101,7 @@ toysDiv.addEventListener('click', (event) => {
     })
     .then(response => response.json())
     .then(updatedToyJson => {
-      toyCardLikesSpan.innerText = updatedToyJson.likes
+      toyCardLikesSpan.innerText = `${updatedToyJson.likes} Likes`
     })
   }
 })

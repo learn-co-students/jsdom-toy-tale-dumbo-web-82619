@@ -16,7 +16,7 @@
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 3
+      "likes": 11
     },
     {
       "id": 4,
@@ -28,7 +28,7 @@
       "id": 5,
       "name": "Rex",
       "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
-      "likes": 5
+      "likes": 12
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": 11
+      "likes": 36
     },
     {
       "name": "Donatello",
@@ -57,7 +57,7 @@
     {
       "name": "Slimer",
       "image": "https://images-na.ssl-images-amazon.com/images/I/61DjLuwnGAL._SX425_.jpg",
-      "likes": 7,
+      "likes": 215,
       "id": 16
     },
     {
@@ -69,7 +69,7 @@
     {
       "name": "Captain Blacktron",
       "image": "https://i.ebayimg.com/images/g/BE0AAOSwa3lcP~lP/s-l640.jpg",
-      "likes": 10,
+      "likes": 38,
       "id": 18
     }
   ]
