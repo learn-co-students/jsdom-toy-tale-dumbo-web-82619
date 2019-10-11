@@ -86,10 +86,6 @@ toyContainer.addEventListener("click", (evt) => {
     })
     .then(res => res.json())
     .then(resJSON => {
-      console.log(resJSON)
-      console.log(resJSON)
-      console.log(document.querySelector(`p.display-likes-${id}`))
-      console.log(resJSON.likes)
       document.querySelector(`p.display-likes-${id}`).value = `${resJSON.likes}`
       document.querySelector(`p.display-likes-${id}`).innerText = `${resJSON.likes} Likes`
     })
