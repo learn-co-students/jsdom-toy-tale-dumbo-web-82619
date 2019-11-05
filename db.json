@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 9
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 10
     },
     {
       "id": 3,
@@ -47,6 +47,24 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Brett",
+      "image": "https://cdn-s3.si.com/s3fs-public/brett-favre-sportsman-of-the-year.jpg",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "Bret Michaels",
+      "image": "http://www.gstatic.com/tv/thumb/persons/80790/80790_v9_bb.jpg",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "",
+      "image": "",
+      "likes": 0,
+      "id": 11
     }
   ]
 }
