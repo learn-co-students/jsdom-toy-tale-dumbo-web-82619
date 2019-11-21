@@ -68,17 +68,43 @@ document.addEventListener("DOMContentLoaded", ()=>{
     imgDiv.setAttribute("class" ,"card")
     imgDiv.innerHTML =`<h2>${toy.name}</h2>
     <img src= ${toy.image} class="toy-avatar" />
-    <p>4 Likes </p>
-    <button class="like-btn-${toy.id}">Like <3</button>`
+    <p>${toy.likes} Likes </p>
+    <button class="like-btn-${toy.id}"> Like <3</button>`
     toyCollection.append(imgDiv)
     
     
     let likeButton = document.querySelector(`.like-btn-${toy.id}`)
-  
+    
     likeButton.addEventListener("click" , (evt) => {
-      console.log(evt.target)
+      //console.log(evt.target)
+      
+      fetch(`http://localhost:3000/toys/${toy.id}`, {
+        method: "PATCH",
+        headers: 
+        {
+          "Content-Type": "application/json",
+          "Accept" : "application/json"
+        },
+        
+        body: JSON.stringify({
+          //"name": toy.name,
+          //"image": toy.image,
+          "likes": toy.likes + 1
+        })
+      }).then(r => r.json()).then((newToyInfo) => { updateToyLikes(newToyInfo)})
       
     })
+    
+   }
+
+    // update likes
+    
+    function updateToyLikes(toy){
+      let imgDivChildToBeUpdated = document.querySelector(`.like-btn-${toy.id}`)
+      let imgDivParent = imgDivChildToBeUpdated.parentElement
+      imgDivParent.children[2].innerText = `${toy.likes} Likes`
+
+      
     
   }
 
