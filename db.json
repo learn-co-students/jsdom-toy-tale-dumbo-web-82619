@@ -47,6 +47,12 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Chucky",
+      "image": "https://www.mezcotoyz.com/mas_assets/cache/image/a/3/c/2620.Jpg",
+      "likes": 0,
+      "id": 9
     }
   ]
 }
